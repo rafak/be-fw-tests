@@ -13,7 +13,7 @@ export class ReportsController {
   @Get('deposit_summary')
   async depositSummary() {
     return this.reportsService.depositSummary()
-      .then(r=>r.map(x=>x.SUM))
+      // .then(r=>r.map(x=>x.SUM))
   }
 
   @Get('authorization_summary')

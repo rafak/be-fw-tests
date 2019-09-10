@@ -6,7 +6,7 @@ const fastify = require('fastify')({
 
 fastify.register(require('../plugins/alias'))
 fastify.register(require('../plugins/params'))
-fastify.register(require('../plugins/models'),{
+fastify.register(require('../plugins/models'), {
   host: 'localhost',
   database: 'test',
   username: 'root',
@@ -14,7 +14,9 @@ fastify.register(require('../plugins/models'),{
   dialect: 'mysql'
 })
 fastify.register(require('../plugins/resources'))
-fastify.register(require('../plugins/reports'))
+fastify.register(require('../plugins/reports'), {
+  prefix: '/reports'
+})
 
 // Run the server!
 const start = async () => {
