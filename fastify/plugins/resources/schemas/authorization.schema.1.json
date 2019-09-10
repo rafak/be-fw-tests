@@ -1,0 +1,138 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "peach-conf.json",
+  "$id": "authorization",
+  "description": "authorization type definition",
+  "type": "object",
+  "definitions": {
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "a string representing a date"
+    },
+    "datetime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "a string representing a date and time"
+    },
+    "decimal": {
+      "type": "number",
+      "multipleOf": 0.01,
+      "description": "a decimal number with 2 decimal spaces"
+    },
+    "time": {
+      "type": "string",
+      "format": "time",
+      "description": "a string representing time"
+    }
+  },
+  "properties": {
+    "approval_code": {
+      "type": "string",
+      "description": "approval code"
+    },
+    "auth_amount": {
+      "$ref": "#/definitions/decimal",
+      "description": "the authorized amount"
+    },
+    "auth_date": {
+      "type": "string",
+      "format": "date",
+      "description": "date of the authorization event"
+    },
+    "auth_id": {
+      "type": "string",
+      "description": "authorization identifier"
+    },
+    "auth_reject_reason": {
+      "type": "string",
+      "description": "authorization rejection reason. only on failed authorizations."
+    },
+    "card_type": {
+      "type": "string",
+      "description": "the type of the card used"
+    },
+    "cashback_amount": {
+      "$ref": "#/definitions/decimal",
+      "description": "amount of cashback"
+    },
+    "created_at": {
+      "$ref": "#/definitions/date",
+      "description": "creation date of the authorization record"
+    },
+    "created_by": {
+      "type": "string",
+      "description": "identifier of the user that created this record"
+    },
+    "debit_credit": {
+      "type": "string",
+      "enum": [
+        "debit",
+        "credit"
+      ],
+      "description": "card variant - debit or credit"
+    },
+    "etag": {
+      "type": "string",
+      "description": "etag value, used for monitoring record changes"
+    },
+    "id": {
+      "type": "string",
+      "description": "unique identifier for this record"
+    },
+    "is_card_present": {
+      "type": "boolean",
+      "description": "was the card present during the authorization"
+    },
+    "is_reversal": {
+      "type": "boolean",
+      "description": "is this a reversal"
+    },
+    "is_success": {
+      "type": "string",
+      "description": "was the authorization successful"
+    },
+    "local_date": {
+      "$ref": "#/definitions/date",
+      "description": "local date for the authorization event"
+    },
+    "local_time": {
+      "$ref": "#/definitions/time",
+      "description": "local date for the authorization event"
+    },
+    "pan": {
+      "type": "string",
+      "description": "card number"
+    },
+    "payment_merchant_id": {
+      "type": "string",
+      "description": "merchant identifier"
+    },
+    "reversal_reason": {
+      "type": "string",
+      "description": "the reason for the reversal, only for reversals."
+    },
+    "source": {
+      "type": "string",
+      "enum": [
+        "tsys",
+        "fd"
+      ],
+      "description": "source of the data"
+    },
+    "terminal_number": {
+      "type": "string",
+      "description": "the terminal number"
+    },
+    "updated_at": {
+      "$ref": "#/definitions/datetime",
+      "description": "date of the last update to this record"
+    },
+    "updated_by": {
+      "type": "string",
+      "description": "id of the user that last updated this record"
+    }
+  },
+  "required": [],
+  "additionalProperties": true
+}
