@@ -15,7 +15,7 @@
     "@hapi/good": "^8.2.1",
     "@hapi/good-console": "^8.1.1",
     "@hapi/good-squeeze": "^5.2.1",
-    "@hapi/hapi": "^18.3.2",
+    "@hapi/hapi": "^19.1.1",
     "@hapi/joi": "^15.1.1",
     "bluebird": "^3.5.5",
     "dotenv": "^8.1.0",
